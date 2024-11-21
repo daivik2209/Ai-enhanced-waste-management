@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Waste Management</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('image4.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Wrapper Styles */
+        .forgot-password-wrapper {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .forgot-password-wrapper h1 {
+            color: #2e7d32; /* Green shade for sustainability theme */
+            margin-bottom: 1rem;
+        }
+
+        .forgot-password-wrapper p {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Input Styles */
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Button Styles */
+        .btn-reset {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #2e7d32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-reset:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Navigation Links */
+        .navigation-links {
+            margin-top: 1rem;
+        }
+
+        .navigation-links a {
+            text-decoration: none;
+            color: #2e7d32;
+            font-size: 0.9rem;
+        }
+
+        .navigation-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Toggle Options */
+        .toggle-options {
+            margin-bottom: 1.5rem;
+        }
+
+        .toggle-options button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border: 1px solid #2e7d32;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #2e7d32;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-options button.active {
+            background-color: #2e7d32;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-password-wrapper">
+        <h1>Reset Your Password</h1>
+        <p>Securely regain access to your account.</p>
+
+        <!-- Toggle Options -->
+        <div class="toggle-options">
+            <button id="emailToggle" class="active" onclick="showEmail()">Use Email</button>
+            <button id="phoneToggle" onclick="showPhone()">Use Phone</button>
+        </div>
+
+        <!-- Email Recovery Form -->
+        <form id="emailForm" style="display: block;">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn-reset">Send Reset Link</button>
+        </form>
+
+        <!-- Phone Recovery Form -->
+        <form id="phoneForm" style="display: none;">
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <button type="submit" class="btn-reset">Send OTP</button>
+        </form>
+
+        <div class="navigation-links">
+            <a href="login.html">Back to Login</a>
+        </div>
+    </div>
+
+    <script>
+        const emailForm = document.getElementById('emailForm');
+        const phoneForm = document.getElementById('phoneForm');
+        const emailToggle = document.getElementById('emailToggle');
+        const phoneToggle = document.getElementById('phoneToggle');
+
+        function showEmail() {
+            emailForm.style.display = 'block';
+            phoneForm.style.display = 'none';
+            emailToggle.classList.add('active');
+            phoneToggle.classList.remove('active');
+        }
+
+        function showPhone() {
+            emailForm.style.display = 'none';
+            phoneForm.style.display = 'block';
+            phoneToggle.classList.add('active');
+            emailToggle.classList.remove('active');
+        }
+
+        // Submit Handlers (Simulated)
+        emailForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            alert(`A reset link will be sent to ${email}`);
+            console.log(`Reset link sent to: ${email}`);
+        });
+
+        phoneForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value;
+            alert(`An OTP will be sent to ${phone}`);
+            console.log(`OTP sent to: ${phone}`);
+        });
+    </script>
+</body>
+</html>

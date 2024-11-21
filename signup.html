@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AI Waste Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('image3.jpg'); /* Add your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #00e676;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #00e676;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #00c853;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .success {
+            color: #00e676;
+        }
+
+        .error {
+            color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signUpForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password (8+ characters)" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="message" id="formMessage"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('signUpForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            // Validation
+            if (name === '' || email === '' || password === '') {
+                displayMessage('Please fill in all fields.', 'error');
+                return;
+            }
+
+            if (password.length < 8) {
+                displayMessage('Password must be at least 8 characters long.', 'error');
+                return;
+            }
+
+            // Simulate successful submission
+            displayMessage('Sign up successful! Welcome, ' + name + '!', 'success');
+
+            // Clear form
+            form.reset();
+
+            // Redirect to another page (example: index.html)
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+
+        function displayMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = `message ${type}`;
+            formMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

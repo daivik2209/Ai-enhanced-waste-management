@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Login</title>
+    <style>
+        /* Styling remains the same */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('image2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
+
+        .login-container p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .login-container button {
+            background-color: #0288d1;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .login-container button:hover {
+            background-color: #0277bd;
+        }
+
+        .login-container a {
+            color: #0288d1;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Social login buttons */
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .google-btn {
+            background-color: white;
+            color: #db4437;
+        }
+
+        .apple-btn {
+            background-color: white;
+            color: #333;
+        }
+
+        .phone-btn {
+            background-color: #7dc480;
+            color: white;
+            border: none;
+        }
+
+        .social-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Please login to your account</p>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <a href="forgotpass.html">Forgot Password?</a>
+            <a href="signup.html">No account? Sign Up</a>
+            <p class="error" id="errorMsg"></p>
+        </form>
+
+        <!-- Social login options -->
+        <div class="social-login">
+            <a href="https://accounts.google.com/" class="social-btn google-btn">
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo"> 
+                Continue with Google
+            </a>
+            <a href="https://idmsa.apple.com/" class="social-btn apple-btn">
+                <img src="https://img.icons8.com/ios-filled/50/333333/mac-os.png" alt="Apple Logo"> 
+                Continue with Apple
+            </a>
+            <a href="otppage.html" class="social-btn phone-btn">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Logo"> 
+                Continue with Phone Number
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

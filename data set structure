@@ -1,0 +1,7 @@
+data/
+├── waste/
+    ├── plastic/
+    ├── paper/
+    ├── metal/
+    ├── glass/
+    └── compost/
